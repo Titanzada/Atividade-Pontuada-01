@@ -91,4 +91,82 @@ def test_nome_vazio_cliente_valido(cliente_valido):
                         )
           
 def test_id_valor_negativo_cliente_valido(cliente_valido):
-    with pytest.raises()
+    with pytest.raises(ValueError, match = "Digite apenas números positivos para o ID."):
+        Cliente(
+                  -232340679,
+                    "dgpp",
+                    "71 98472 - 9779",
+                    "dgpp@gmail.com",
+                      Endereco("Beila",
+                                "130",
+                                "1º Andar", 
+                                "40711 - 600", 
+                                "Salvador", 
+                                UnidadeFederativa.BAHIA), 
+                    Sexo.MASCULINO, 
+                    EstadoCivil.SOLTEIRO,
+                    "25/03/2007",
+                    #ProtocoloAtendimento: 
+                    123123
+                        )
+        
+def test_id_valor_invalido_cliente_valido(cliente_valido):
+    with pytest.raises(TypeError, match = "Digite apenas números para o ID."):
+        Cliente(
+                  "232340679",
+                    "dgpp",
+                    "71 98472 - 9779",
+                    "dgpp@gmail.com",
+                      Endereco("Beila",
+                                "130",
+                                "1º Andar", 
+                                "40711 - 600", 
+                                "Salvador", 
+                                UnidadeFederativa.BAHIA), 
+                    Sexo.MASCULINO, 
+                    EstadoCivil.SOLTEIRO,
+                    "25/03/2007",
+                    #ProtocoloAtendimento: 
+                    123123
+                        )
+
+def test_telefone_valido_cliente_valido(cliente_valido):
+  with pytest.raises(TypeError, match = "Digite apenas números."):
+      Cliente(
+                  232340679,
+                    "dgpp",
+                    71984729779,
+                    "dgpp@gmail.com",
+                      Endereco("Beila",
+                                "130",
+                                "1º Andar", 
+                                "40711 - 600", 
+                                "Salvador", 
+                                UnidadeFederativa.BAHIA), 
+                    Sexo.MASCULINO, 
+                    EstadoCivil.SOLTEIRO,
+                    "25/03/2007",
+                    #ProtocoloAtendimento: 
+                    123123
+                        )
+  
+def test_email_invalido_cliente_valido(cliente_valido):
+    with pytest.raises(TypeError, match = "Email Inválido, Insira o email Corretamente."):
+        Cliente(
+                  232340679,
+                    "dgpp",
+                    "71 98472 - 9779",
+                    " ",
+                      Endereco("Beila",
+                                "130",
+                                "1º Andar", 
+                                "40711 - 600", 
+                                "Salvador", 
+                                UnidadeFederativa.BAHIA), 
+                    Sexo.MASCULINO, 
+                    EstadoCivil.SOLTEIRO,
+                    "25/03/2007",
+                    #ProtocoloAtendimento: 
+                    123123
+                        )
+
