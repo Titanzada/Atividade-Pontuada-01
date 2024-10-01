@@ -25,7 +25,7 @@ class Engenheiro(Funcionario):
             f"\nMatrícula: {self.matricula}"
             f"\nSetor: {self.setor.nome}"
             f"\nSálario: {self.salario}"
-            f"\nCREA: {self.oab}"
+            f"\nCREA: {self.crea}"
             f"\n{self.endereco}"
         )
 
