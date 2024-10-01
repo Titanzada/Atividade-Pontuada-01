@@ -111,7 +111,7 @@ def engenheiro_valido():
 
     print(engenheiro)
 
-"""Funções para Testes:"""
+"""Funções de Instanciamento das classes para Testes:"""
 
 """
 cliente_valido()
